@@ -8,6 +8,9 @@ public class CameraRotation : MonoBehaviour {
 	}
 
 	void Update () {
-		transform.rotation *= Quaternion.Euler (0, 1, 0);
+		float rotationSpeed = 5.0f;
+		float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
+		float mouseY = Input.GetAxis ("Mouse Y") * rotationSpeed;
+		transform.rotation *= Quaternion.Euler (-mouseY, mouseX, 0);
 	}
 }
