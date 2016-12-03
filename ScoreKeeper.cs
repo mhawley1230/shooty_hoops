@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ScoreKeeper : MonoBehaviour {
-	private int score = 0;
+	int score = 0;
 
 	void Start () {
 	
@@ -12,8 +12,8 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter (Collision collision) {
-		score++;
+	public void IncrementScore (int amount) {
+		score += amount;
 		print("Score: " + score);
 	}
 }
